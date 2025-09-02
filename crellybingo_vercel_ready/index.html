@@ -156,17 +156,94 @@ BETA-V.4.2
         100% {
           transform: rotate(0);
 
-           <div id="dictionary">
-      <h2>Dictionary</h2>
-      <input type="text" id="searchInput" placeholder="Search a bingo term..." />
-      <ul id="results"></ul>
-      <div id="explanation"></div>
-    </div>
+#bingo-board {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-bottom: 30px;
+    }
+
+    .square {
+      width: 100px;
+      height: 100px;
+      background: #1e1e1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+    .stamped {
+      background: rgba(255, 0, 0, 0.5);
+    }
+
+    /* Dictionary styles */
+    #dictionary {
+      margin-top: 40px;
+      width: 300px;
+      background: #1e1e1e;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    }
+
+    #dictionary h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    #dictionary input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    #dictionary ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #dictionary li {
+      padding: 6px;
+      border-bottom: 1px solid #333;
+      cursor: pointer;
+    }
+
+    #dictionary li:hover {
+      background: #333;
+    }
+
+    #explanation {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <h1>Crelly Bingo</h1>
+  
+  <!-- Bingo Board -->
+  <div id="bingo-board"></div>
+
+  <!-- Dictionary Section -->
+  <div id="dictionary">
+    <h2>Dictionary</h2>
+    <input type="text" id="searchInput" placeholder="Search a bingo term..." />
+    <ul id="results"></ul>
+    <div id="explanation"></div>
   </div>
 
+  <!-- Your script file -->
   <script src="script.js"></script>
-</body>
-       
+          
         }
       }
     </style>
